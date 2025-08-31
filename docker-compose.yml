@@ -1,5 +1,6 @@
 services:
   app:
+    platform: linux/amd64
     image: cravyn/devops-for-programmers-project-74
     build:
       context: .

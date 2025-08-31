@@ -6,7 +6,7 @@ jobs:
   test:
       runs-on: ubuntu-latest
 
-      steps:
+      steps:  
         - name: Checkout code
           uses: actions/checkout@v4
 
@@ -34,10 +34,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: Dockerfile.production
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-for-programmers-project-74:latest
           platforms: linux/amd64
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-for-programmers-project-74:latest
