@@ -40,3 +40,4 @@ jobs:
           file: Dockerfile.production
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-for-programmers-project-74:latest
+          platforms: linux/amd64
