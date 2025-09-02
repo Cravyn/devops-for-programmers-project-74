@@ -3,3 +3,17 @@
 
 ### Push action:
 [![push](https://github.com/Cravyn/devops-for-programmers-project-74/actions/workflows/push.yml/badge.svg)](https://github.com/Cravyn/devops-for-programmers-project-74/actions/workflows/push.yml)
+
+### Requirements
+
+- Docker
+- Docker Compose >= v1.27.0
+- make
+
+### Instructions
+
+- Tests: `make ci`
+
+### Image name
+
+- cravyn/devops-for-programmers-project-74
