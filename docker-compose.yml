@@ -9,13 +9,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    env_file:
-      - ./app/.env
 
   db:
     image: postgres:latest
-    env_file:
-      - ./app/.env
     environment:
       - POSTGRES_USER=${DATABASE_USERNAME}
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
