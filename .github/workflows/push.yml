@@ -9,6 +9,9 @@ jobs:
       steps:  
         - name: Checkout code
           uses: actions/checkout@v4
+          
+        - name: Create .env file
+          run: cp .env.example .env
 
         - name: Set up Docker Buildx
           uses: docker/setup-buildx-action@v3
@@ -24,12 +27,6 @@ jobs:
 
         - name: Run tests with Docker Compose
           run: make ci
-          env:
-            DATABASE_NAME: ${{ env.DATABASE_NAME }}
-            DATABASE_USERNAME: ${{ env.DATABASE_USERNAME }}
-            DATABASE_PASSWORD: ${{ env.DATABASE_PASSWORD }}
-            DATABASE_PORT: ${{ env.DATABASE_PORT }}
-            DATABASE_HOST: ${{ env.DATABASE_HOST }}
 
   build-and-push:
     runs-on: ubuntu-latest
